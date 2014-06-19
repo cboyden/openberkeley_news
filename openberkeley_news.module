@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OpenBerkeley News feature.
+ */
+
+include_once 'openberkeley_news.features.inc';
