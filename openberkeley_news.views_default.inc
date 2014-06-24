@@ -15,7 +15,7 @@ function openberkeley_news_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'News Archive';
+  $view->human_name = 'News';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -113,89 +113,10 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'today';
   $handler->display->display_options['filters']['field_publication_date_value']['year_range'] = '-1:+3';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'field_publication_date' => 'field_publication_date',
-    'field_source' => 'field_source',
-  );
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: External link */
-  $handler->display->display_options['fields']['field_external_link']['id'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['table'] = 'field_data_field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['field'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['label'] = '';
-  $handler->display->display_options['fields']['field_external_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['empty'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_external_link']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_external_link']['type'] = 'link_plain';
-  /* Field: Content: Source */
-  $handler->display->display_options['fields']['field_source']['id'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['table'] = 'field_data_field_source';
-  $handler->display->display_options['fields']['field_source']['field'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['label'] = '';
-  $handler->display->display_options['fields']['field_source']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_source']['alter']['text'] = ' - [field_source]';
-  $handler->display->display_options['fields']['field_source']['element_type'] = 'em';
-  $handler->display->display_options['fields']['field_source']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_source']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_source']['type'] = 'text_plain';
-  /* Field: Content: Publication date */
-  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
-    'format_type' => 'panopoly_day',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_external_link]';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
-  $handler->display->display_options['path'] = 'news-archive';
-
-  /* Display: Home page content pane */
-  $handler = $view->new_display('panel_pane', 'Home page content pane', 'panel_pane_1');
+  /* Display: Recent stories */
+  $handler = $view->new_display('panel_pane', 'Recent stories', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Recent Stories';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -203,6 +124,9 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'News Archive';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'news-archive';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -252,9 +176,19 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
-  /* Display: Content pane 2 */
-  $handler = $view->new_display('panel_pane', 'Content pane 2', 'panel_pane_2');
+  /* Display: Full listing */
+  $handler = $view->new_display('panel_pane', 'Full listing', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -273,6 +207,19 @@ function openberkeley_news_views_default_views() {
     'field_source' => 'field_source',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h2>%1</h2>';
+  $handler->display->display_options['header']['area']['format'] = 'editor';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -338,6 +285,129 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: News type (field_news_type) */
+  $handler->display->display_options['arguments']['field_news_type_tid']['id'] = 'field_news_type_tid';
+  $handler->display->display_options['arguments']['field_news_type_tid']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['arguments']['field_news_type_tid']['field'] = 'field_news_type_tid';
+  $handler->display->display_options['arguments']['field_news_type_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_news_type_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_news_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['vocabularies'] = array(
+    'news_type' => 'news_type',
+  );
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['argument_input'] = array(
+    'field_news_type_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:file.field_file_image_alt_text',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: News type (field_news_type)',
+    ),
+  );
+
+  /* Display: RSS Feed */
+  $handler = $view->new_display('feed', 'RSS Feed', 'feed_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'rss_fields';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['link_field'] = 'field_external_link';
+  $handler->display->display_options['row_options']['description_field'] = 'body';
+  $handler->display->display_options['row_options']['creator_field'] = 'field_byline';
+  $handler->display->display_options['row_options']['date_field'] = 'field_publication_date';
+  $handler->display->display_options['row_options']['guid_field_options'] = array(
+    'guid_field' => 'uuid',
+    'guid_field_is_permalink' => 0,
+  );
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'panopoly_day',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_external_link]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Node UUID */
+  $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['table'] = 'node';
+  $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['label'] = '';
+  $handler->display->display_options['fields']['uuid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: External link */
+  $handler->display->display_options['fields']['field_external_link']['id'] = 'field_external_link';
+  $handler->display->display_options['fields']['field_external_link']['table'] = 'field_data_field_external_link';
+  $handler->display->display_options['fields']['field_external_link']['field'] = 'field_external_link';
+  $handler->display->display_options['fields']['field_external_link']['label'] = '';
+  $handler->display->display_options['fields']['field_external_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_external_link']['empty'] = '[path]';
+  $handler->display->display_options['fields']['field_external_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_external_link']['type'] = 'link_absolute';
+  /* Field: Content: Byline */
+  $handler->display->display_options['fields']['field_byline']['id'] = 'field_byline';
+  $handler->display->display_options['fields']['field_byline']['table'] = 'field_data_field_byline';
+  $handler->display->display_options['fields']['field_byline']['field'] = 'field_byline';
+  $handler->display->display_options['fields']['field_byline']['label'] = '';
+  $handler->display->display_options['fields']['field_byline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: News type (field_news_type) */
+  $handler->display->display_options['arguments']['field_news_type_tid']['id'] = 'field_news_type_tid';
+  $handler->display->display_options['arguments']['field_news_type_tid']['table'] = 'field_data_field_news_type';
+  $handler->display->display_options['arguments']['field_news_type_tid']['field'] = 'field_news_type_tid';
+  $handler->display->display_options['arguments']['field_news_type_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_news_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['vocabularies'] = array(
+    'news_type' => 'news_type',
+  );
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['path'] = 'news-archive/%/feed';
   $export['news_archive'] = $view;
 
   return $export;
