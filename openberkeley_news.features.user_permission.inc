@@ -24,7 +24,6 @@ function openberkeley_news_user_default_permissions() {
     'name' => 'administer panelizer node news_item content',
     'roles' => array(
       'administrator' => 'administrator',
-      'builder' => 'builder',
     ),
     'module' => 'panelizer',
   );
@@ -116,7 +115,10 @@ function openberkeley_news_user_default_permissions() {
   // Exported permission: 'delete terms in news_type'.
   $permissions['delete terms in news_type'] = array(
     'name' => 'delete terms in news_type',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'builder' => 'builder',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -146,7 +148,11 @@ function openberkeley_news_user_default_permissions() {
   // Exported permission: 'edit terms in news_type'.
   $permissions['edit terms in news_type'] = array(
     'name' => 'edit terms in news_type',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'builder' => 'builder',
+      'editor' => 'editor',
+    ),
     'module' => 'taxonomy',
   );
 
