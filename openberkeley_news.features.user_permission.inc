@@ -74,6 +74,13 @@ function openberkeley_news_user_default_permissions() {
     'module' => 'panelizer',
   );
 
+  // Exported permission: 'administer panelizer taxonomy_term news_type defaults'.
+  $permissions['administer panelizer taxonomy_term news_type defaults'] = array(
+    'name' => 'administer panelizer taxonomy_term news_type defaults',
+    'roles' => array(),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'create news_item content'.
   $permissions['create news_item content'] = array(
     'name' => 'create news_item content',
@@ -106,6 +113,13 @@ function openberkeley_news_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in news_type'.
+  $permissions['delete terms in news_type'] = array(
+    'name' => 'delete terms in news_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any news_item content'.
   $permissions['edit any news_item content'] = array(
     'name' => 'edit any news_item content',
@@ -127,6 +141,13 @@ function openberkeley_news_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in news_type'.
+  $permissions['edit terms in news_type'] = array(
+    'name' => 'edit terms in news_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
   );
 
   return $permissions;

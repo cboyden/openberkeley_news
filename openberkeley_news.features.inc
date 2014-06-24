@@ -34,7 +34,7 @@ function openberkeley_news_node_info() {
     'news_item' => array(
       'name' => t('News Item'),
       'base' => 'node_content',
-      'description' => t('Used to create news items that aren\'t in the main or secondary menus'),
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

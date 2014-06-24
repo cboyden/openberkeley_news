@@ -94,6 +94,63 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-news_item-field_byline'
+  $field_instances['node-news_item-field_byline'] = array(
+    'bundle' => 'news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Author of the news item.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_byline',
+    'label' => 'Byline',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-news_item-field_external_link'
   $field_instances['node-news_item-field_external_link'] = array(
     'bundle' => 'news_item',
@@ -105,7 +162,7 @@ function openberkeley_news_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'featured' => array(
         'label' => 'above',
@@ -162,6 +219,55 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-news_item-field_news_type'
+  $field_instances['node-news_item-field_news_type'] = array(
+    'bundle' => 'news_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_type',
+    'label' => 'News type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-news_item-field_publication_date'
   $field_instances['node-news_item-field_publication_date'] = array(
     'bundle' => 'news_item',
@@ -179,7 +285,7 @@ function openberkeley_news_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'featured' => array(
         'label' => 'above',
@@ -230,7 +336,7 @@ function openberkeley_news_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -246,7 +352,7 @@ function openberkeley_news_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'featured' => array(
         'label' => 'above',
@@ -313,17 +419,20 @@ function openberkeley_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Author of the news item.');
   t('Body');
+  t('Byline');
   t('Date the story was published.');
   t('Enter the URL of a story hosted on an external site.');
   t('External link');
   t('External stories do not need a Body, but they should have a Summary for best display on the Archive page.');
+  t('News type');
   t('Publication date');
   t('Source');
   t('The source of the news story, if not produced specifically for this site. Examples: UC Berkeley NewsCenter, San Francisco Chronicle, NBC Bay Area.');

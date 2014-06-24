@@ -18,7 +18,7 @@ function openberkeley_news_panelizer_defaults() {
   $panelizer->panelizer_type = 'node';
   $panelizer->panelizer_key = 'news_item';
   $panelizer->no_blocks = FALSE;
-  $panelizer->css_id = 'page-page';
+  $panelizer->css_id = '';
   $panelizer->css = '';
   $panelizer->pipeline = 'ipe';
   $panelizer->contexts = array();
@@ -28,7 +28,7 @@ function openberkeley_news_panelizer_defaults() {
   $panelizer->css_class = '';
   $panelizer->title_element = 'H2';
   $panelizer->link_to_entity = TRUE;
-  $panelizer->extra = '';
+  $panelizer->extra = array();
   $display = new panels_display();
   $display->layout = 'boxton';
   $display->layout_settings = array();
@@ -40,11 +40,11 @@ function openberkeley_news_panelizer_defaults() {
   );
   $display->cache = array();
   $display->title = '%node:title';
-  $display->uuid = '46d4da27-f6d4-4b50-9ae1-03213b134235';
+  $display->uuid = 'fac82ecd-6f1e-43af-bef5-336f120f9723';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7e00bcd3-3907-45cd-b84a-4c2244b7e83d';
+    $pane->pid = 'new-176996a9-29f4-4d1e-8c20-5b5c5b8f31db';
     $pane->panel = 'contentmain';
     $pane->type = 'node_content';
     $pane->subtype = 'node_content';
@@ -59,7 +59,7 @@ function openberkeley_news_panelizer_defaults() {
       'link' => 0,
       'leave_node_title' => 0,
       'build_mode' => 'full',
-      'context' => 'panelizer',
+      'context' => array(),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -69,9 +69,9 @@ function openberkeley_news_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7e00bcd3-3907-45cd-b84a-4c2244b7e83d';
-    $display->content['new-7e00bcd3-3907-45cd-b84a-4c2244b7e83d'] = $pane;
-    $display->panels['contentmain'][0] = 'new-7e00bcd3-3907-45cd-b84a-4c2244b7e83d';
+    $pane->uuid = '176996a9-29f4-4d1e-8c20-5b5c5b8f31db';
+    $display->content['new-176996a9-29f4-4d1e-8c20-5b5c5b8f31db'] = $pane;
+    $display->panels['contentmain'][0] = 'new-176996a9-29f4-4d1e-8c20-5b5c5b8f31db';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
