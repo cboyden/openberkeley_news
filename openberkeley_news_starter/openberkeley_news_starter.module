@@ -1,4 +1,4 @@
-ﬁ<?php
+<?php
 /**
  * @file
  * Code for the OpenBerkeley Demo feature.
@@ -13,9 +13,9 @@ function openberkeley_news_starter_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
-      'OpenBerkeleyStarterNodePages' => array('class_name' => 'OpenBerkeleyStarterNodePages'),
-      'OpenBerkeleyStarterMenu' => array('class_name' => 'OpenBerkeleyStarterMenu'),
-      'OpenBerkeleyStarterBlocks' => array('class_name' => 'OpenBerkeleyStarterBlocks'),
+      'OpenBerkeleyNewsStarterNodePages' => array('class_name' => 'OpenBerkeleyNewsStarterNodePages'),
+      'OpenBerkeleyNewsStarterMenu' => array('class_name' => 'OpenBerkeleyNewsStarterMenu'),
+      //'OpenBerkeleyNewsStarterBlocks' => array('class_name' => 'OpenBerkeleyNewsStarterBlocks'),
     ),
   );
   return $api;
