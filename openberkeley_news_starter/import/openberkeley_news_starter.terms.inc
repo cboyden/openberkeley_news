@@ -9,7 +9,6 @@ class OpenBerkeleyNewsStarterTerms extends Migration {
   public function __construct($arguments = array()) {
     parent::__construct($arguments = array());
     $this->description = t('Import taxonomy terms.');
-    $this->dependencies = array();
 
     // Create a map object for tracking the relationships between source rows.
     $this->map = new MigrateSQLMap($this->machineName,
@@ -35,7 +34,6 @@ class OpenBerkeleyNewsStarterTerms extends Migration {
     $this->destination = new MigrateDestinationTerm('news_type', $term_options);
 
     $this->addSimpleMappings(array('name', 'description', 'format','weight'));
-    $this->addFieldMapping('format')->defaultValue($text_format);
 
     $this->addUnmigratedDestinations(array('vid', 'uuid'));
   }

@@ -38,9 +38,12 @@ function openberkeley_news_starter_install_blocks() {
  */
 function openberkeley_news_starter_enable() {
   _panopoly_core_import_demo_content(array(
+    /*
+     * The below order is important because of dependancies
+     */
+    'OpenBerkeleyNewsStarterTerms',
     'OpenBerkeleyNewsStarterNodePages',
     'OpenBerkeleyNewsStarterMenu',
-    'OpenBerkeleyNewsStarterTerms',
     //'OpenBerkeleyNewsStarterBlocks',
   ));
 
@@ -53,8 +56,14 @@ function openberkeley_news_starter_enable() {
  */
 function openberkeley_news_starter_disable() {
   _panopoly_core_rollback_demo_content(array(
-    'OpenBerkeleyNewsStarterNodePages',
+    /*
+     * It's important to disable in this order because: Menu depends on Pages
+     * and Pages depends on Terms. If do things out of order one or more rollbacks
+     * will silently fail on disable. If you use drush migrate-rollback commands
+     * you'll see "skipping migration...due to unfulfilled dependencies"
+     */
     'OpenBerkeleyNewsStarterMenu',
+    'OpenBerkeleyNewsStarterNodePages',
     'OpenBerkeleyNewsStarterTerms',
     //'OpenBerkeleyNewsStarterBlocks',
   ));

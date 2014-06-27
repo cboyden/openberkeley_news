@@ -9,7 +9,7 @@ class OpenBerkeleyNewsStarterNodePages extends Migration {
   public function __construct($arguments = array()) {
     parent::__construct($arguments = array());
     $this->description = t('Import Content Pages.');
-
+    $this->dependencies = array('OpenBerkeleyNewsStarterTerms');
     // Create a map object for tracking the relationships between source rows.
     $this->map = new MigrateSQLMap($this->machineName,
       array(
