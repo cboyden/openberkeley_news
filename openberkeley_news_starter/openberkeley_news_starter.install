@@ -40,6 +40,7 @@ function openberkeley_news_starter_enable() {
   _panopoly_core_import_demo_content(array(
     'OpenBerkeleyNewsStarterNodePages',
     'OpenBerkeleyNewsStarterMenu',
+    'OpenBerkeleyNewsStarterTerms',
     //'OpenBerkeleyNewsStarterBlocks',
   ));
 
@@ -54,6 +55,7 @@ function openberkeley_news_starter_disable() {
   _panopoly_core_rollback_demo_content(array(
     'OpenBerkeleyNewsStarterNodePages',
     'OpenBerkeleyNewsStarterMenu',
+    'OpenBerkeleyNewsStarterTerms',
     //'OpenBerkeleyNewsStarterBlocks',
   ));
 }
