@@ -15,7 +15,6 @@ function openberkeley_news_starter_migrate_api() {
     'migrations' => array(
       'OpenBerkeleyNewsStarterNodePages' => array('class_name' => 'OpenBerkeleyNewsStarterNodePages'),
       'OpenBerkeleyNewsStarterMenu' => array('class_name' => 'OpenBerkeleyNewsStarterMenu'),
-      'OpenBerkeleyNewsStarterTerms' => array('class_name' => 'OpenBerkeleyNewsStarterTerms'),
       //'OpenBerkeleyNewsStarterBlocks' => array('class_name' => 'OpenBerkeleyNewsStarterBlocks'),
     ),
   );

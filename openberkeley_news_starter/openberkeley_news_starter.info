@@ -17,4 +17,4 @@ dependencies[] = openberkeley_news
 files[] = import/openberkeley_news_starter.pages.inc
 files[] = import/openberkeley_news_starter.menu.inc
 files[] = import/openberkeley_news_starter.blocks.inc
-files[] = import/openberkeley_news_starter.terms.inc
+;files[] = import/openberkeley_news_starter.terms.inc
