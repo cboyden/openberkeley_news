@@ -9,7 +9,7 @@ class OpenBerkeleyNewsStarterNodePages extends Migration {
   public function __construct($arguments = array()) {
     parent::__construct($arguments = array());
     $this->description = t('Import Content Pages.');
-    $this->dependencies = array('OpenBerkeleyNewsStarterTerms');
+    //$this->dependencies = array('OpenBerkeleyNewsStarterTerms');
     // Create a map object for tracking the relationships between source rows.
     $this->map = new MigrateSQLMap($this->machineName,
       array(
@@ -39,6 +39,8 @@ class OpenBerkeleyNewsStarterNodePages extends Migration {
     $this->addFieldMapping('field_byline', 'byline');
     $this->addFieldMapping('field_external_link', 'external link');
     $this->addFieldMapping('field_news_type', 'news type');
+    $this->addFieldMapping('field_news_type:create_term')
+      ->defaultValue(TRUE);
     $this->addFieldMapping('field_source', 'source');
     $this->addFieldMapping('field_publication_date', 'publication date');
   }
@@ -52,5 +54,28 @@ class OpenBerkeleyNewsStarterNodePages extends Migration {
     $columns[5] = array('source', 'Source');
     $columns[6] = array('publication date', 'Publication Date');
     return $columns;
+  }
+
+  function postRollback() {
+    $term_name = "General";
+    $term = taxonomy_get_term_by_name($term_name, 'news_type');
+    if (count($term) > 1) {
+      drupal_set_message("Multiple $term_name terms in the news_type vocabulary. Aborting clean up of starter content terms.");
+      return;
+    }
+    $term_obj = array_pop($term);
+    $tid = $term_obj->tid;
+    if (!empty($tid)) {
+      $nodeQuery = new EntityFieldQuery();
+      $entities = $nodeQuery->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'news_item')
+        ->fieldCondition('field_news_type', 'tid', $tid)
+        ->execute();
+      if (count($entities) == 0) {
+        // If no nodes are associated with the General term defined by this
+        // starter module, delete the term.
+        taxonomy_term_delete($tid);
+      }
+    }
   }
 }
