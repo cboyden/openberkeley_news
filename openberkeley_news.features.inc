@@ -31,7 +31,7 @@ function openberkeley_news_views_api($module = NULL, $api = NULL) {
  */
 function openberkeley_news_node_info() {
   $items = array(
-    'news_item' => array(
+    'openberkeley_news_item' => array(
       'name' => t('News Item'),
       'base' => 'node_content',
       'description' => '',

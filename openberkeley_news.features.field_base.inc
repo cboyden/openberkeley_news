@@ -10,13 +10,13 @@
 function openberkeley_news_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_byline'
-  $field_bases['field_byline'] = array(
+  // Exported field_base: 'field_openberkeley_news_byline'
+  $field_bases['field_openberkeley_news_byline'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_byline',
+    'field_name' => 'field_openberkeley_news_byline',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -39,13 +39,13 @@ function openberkeley_news_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_external_link'
-  $field_bases['field_external_link'] = array(
+  // Exported field_base: 'field_openberkeley_news_xlink'
+  $field_bases['field_openberkeley_news_xlink'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_external_link',
+    'field_name' => 'field_openberkeley_news_xlink',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -69,13 +69,13 @@ function openberkeley_news_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_news_type'
-  $field_bases['field_news_type'] = array(
+  // Exported field_base: 'field_openberkeley_news_type'
+  $field_bases['field_openberkeley_news_type'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_news_type',
+    'field_name' => 'field_openberkeley_news_type',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -94,7 +94,7 @@ function openberkeley_news_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'news_type',
+          'vocabulary' => 'openberkeley_news_type',
           'parent' => 0,
         ),
       ),
@@ -103,13 +103,13 @@ function openberkeley_news_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_publication_date'
-  $field_bases['field_publication_date'] = array(
+  // Exported field_base: 'field_openberkeley_news_pdate'
+  $field_bases['field_openberkeley_news_pdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_publication_date',
+    'field_name' => 'field_openberkeley_news_pdate',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -133,13 +133,13 @@ function openberkeley_news_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_source'
-  $field_bases['field_source'] = array(
+  // Exported field_base: 'field_openberkeley_news_source'
+  $field_bases['field_openberkeley_news_source'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_source',
+    'field_name' => 'field_openberkeley_news_source',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
