@@ -5,3 +5,29 @@
  */
 
 include_once 'openberkeley_news.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function openberkeley_news_menu() {
+
+  $items = array();
+
+  /*
+   * The base Open Berkeley menu item admin/config/openberkeley is defined by
+   * openberkeley_admin
+   */
+
+  $items['admin/config/openberkeley/news'] = array(
+    'title' => 'News settings',
+    'description' => 'Configure News options',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('openberkeley_news_admin_form'),
+    'access callback' => TRUE,
+    'access arguments' => array('edit any news_item content'),
+    'file' => 'openberkeley_news.admin.inc',
+  );
+
+  return $items;
+}
+
