@@ -8,7 +8,6 @@ configure = admin/config/openberkeley/news
 dependencies[] = date
 dependencies[] = link
 dependencies[] = node
-dependencies[] = openberkeley_admin
 dependencies[] = panopoly_pages
 dependencies[] = text
 dependencies[] = views
