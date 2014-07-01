@@ -1,0 +1,68 @@
+<?php
+/**
+ * @file
+ * Install hooks for openberkeley_news_starter.
+ */
+
+/**
+ * Enable default blocks in our default theme.
+ */
+function openberkeley_news_starter_install_blocks() {
+/*
+  $blocks = array(
+    array(
+      'theme' => 'berkeley',
+      'region' => 'footer',
+      'module' => 'menu',
+      'delta' => 'menu-footer-menu',
+    ),
+  );
+  
+  foreach ($blocks as $block) {
+    db_merge('block')
+      ->key(array('theme' => $block['theme'], 'delta' => $block['delta'], 'module' => $block['module']))
+      ->fields(array(
+        'title' => isset($block['title']) ? $block['title'] : '',
+        'region' => ($block['region'] == BLOCK_REGION_NONE ? '' : $block['region']),
+        'pages' => '',
+        'status' => (int) ($block['region'] != BLOCK_REGION_NONE),
+        'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+      ))
+      ->execute();
+  }
+*/
+}
+
+/**
+ * Implements hook_enable().
+ */
+function openberkeley_news_starter_enable() {
+  _panopoly_core_import_demo_content(array(
+    /*
+     * The below order is important because of dependencies
+     */
+    'OpenBerkeleyNewsStarterNodePages',
+    'OpenBerkeleyNewsStarterMenu',
+    //'OpenBerkeleyNewsStarterBlocks',
+  ));
+
+  // Enable default blocks in our default theme.
+  //openberkeley_news_starter_install_blocks();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function openberkeley_news_starter_disable() {
+  _panopoly_core_rollback_demo_content(array(
+    /*
+     * It's important to disable in this order because: Menu depends on Pages.
+     * If do things out of order one or more rollbacks
+     * will silently fail on disable. If you use drush migrate-rollback commands
+     * you'll see "skipping migration...due to unfulfilled dependencies"
+     */
+    'OpenBerkeleyNewsStarterMenu',
+    'OpenBerkeleyNewsStarterNodePages',
+    //'OpenBerkeleyNewsStarterBlocks',
+  ));
+}
