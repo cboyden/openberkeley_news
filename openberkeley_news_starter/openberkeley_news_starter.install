@@ -15,6 +15,7 @@ function openberkeley_news_starter_enable() {
     'OpenBerkeleyNewsStarterNodePages',
     'OpenBerkeleyNewsStarterMenu',
   ));
+  variable_set('openberkeley_news_use_starter_content', 1);
 }
 
 /**
@@ -31,6 +32,7 @@ function openberkeley_news_starter_disable() {
     'OpenBerkeleyNewsStarterMenu',
     'OpenBerkeleyNewsStarterNodePages',
   ));
+  variable_set('openberkeley_news_use_starter_content', 0);
 }
 
 /**

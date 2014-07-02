@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * Implements hook_install()
+ */
+function openberkeley_news_install() {
+  // enable starter content by default
+  variable_set('openberkeley_news_use_starter_content', 1);
+}
+
+
+
+/**
  * Implements hook_enable().
  */
 function openberkeley_news_enable() {
@@ -37,6 +47,13 @@ function openberkeley_news_disable() {
  * is not required here. In fact explictly disabling that module here results
  * in an error related to the migrate module.
  */
+}
+
+/**
+ * Implements hook_uninstall
+ */
+function openberkeley_news_uninstall() {
+  variable_del('openberkeley_news_use_starter_content');
 }
 
 function openberkeley_news_install_shutdown() {
