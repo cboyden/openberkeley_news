@@ -9,9 +9,9 @@
  */
 function openberkeley_news_taxonomy_default_vocabularies() {
   return array(
-    'news_type' => array(
+    'openberkeley_news_type' => array(
       'name' => 'News type',
-      'machine_name' => 'news_type',
+      'machine_name' => 'openberkeley_news_type',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',

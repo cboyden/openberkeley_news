@@ -13,10 +13,10 @@ function openberkeley_news_panelizer_defaults() {
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
-  $panelizer->name = 'node:news_item:default';
+  $panelizer->name = 'node:openberkeley_news_item:default';
   $panelizer->title = 'Default';
   $panelizer->panelizer_type = 'node';
-  $panelizer->panelizer_key = 'news_item';
+  $panelizer->panelizer_key = 'openberkeley_news_item';
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
@@ -75,7 +75,7 @@ function openberkeley_news_panelizer_defaults() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
-  $export['node:news_item:default'] = $panelizer;
+  $export['node:openberkeley_news_item:default'] = $panelizer;
 
   return $export;
 }

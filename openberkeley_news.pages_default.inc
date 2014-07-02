@@ -11,7 +11,7 @@ function openberkeley_news_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'news_archive';
+  $page->name = 'openberkeley_news_archive';
   $page->task = 'page';
   $page->admin_title = 'News Archive';
   $page->admin_description = 'Panel with view of news archive.';
@@ -37,7 +37,7 @@ function openberkeley_news_default_page_manager_pages() {
   $handler->api_version = 1;
   $handler->name = 'page_news_archive_panel_context_2';
   $handler->task = 'page';
-  $handler->subtask = 'news_archive';
+  $handler->subtask = 'openberkeley_news_archive';
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
@@ -69,7 +69,7 @@ function openberkeley_news_default_page_manager_pages() {
     $pane->pid = 'new-6dff47d9-b4df-4598-80c9-4f4f9af44baf';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'news_archive-panel_pane_2';
+    $pane->subtype = 'openberkeley_news_archive-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -92,7 +92,7 @@ function openberkeley_news_default_page_manager_pages() {
   $display->title_pane = 'new-6dff47d9-b4df-4598-80c9-4f4f9af44baf';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['news_archive'] = $page;
+  $pages['openberkeley_news_archive'] = $page;
 
   return $pages;
 

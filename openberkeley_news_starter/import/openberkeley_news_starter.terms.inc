@@ -31,7 +31,7 @@ class OpenBerkeleyNewsStarterTerms extends Migration {
     $language = LANGUAGE_NONE;
     $text_format = 'editor';
     $term_options = MigrateDestinationTerm::options($language, $text_format);
-    $this->destination = new MigrateDestinationTerm('news_type', $term_options);
+    $this->destination = new MigrateDestinationTerm('field_openberkeley_news_type', $term_options);
 
     $this->addSimpleMappings(array('name', 'description', 'format','weight'));
 

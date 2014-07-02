@@ -11,7 +11,7 @@ function openberkeley_news_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'news_archive';
+  $view->name = 'openberkeley_news_archive';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -33,7 +33,7 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_publication_date',
+      'field' => 'field_openberkeley_news_pdate',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -47,24 +47,24 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: External link */
-  $handler->display->display_options['fields']['field_external_link']['id'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['table'] = 'field_data_field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['field'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['label'] = '';
-  $handler->display->display_options['fields']['field_external_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['empty'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_external_link']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_external_link']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['id'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['table'] = 'field_data_field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['field'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['type'] = 'link_plain';
   /* Field: Content: Publication date */
-  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['id'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['table'] = 'field_data_field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['field'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['settings'] = array(
     'format_type' => 'panopoly_day',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -77,20 +77,20 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_external_link]';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_openberkeley_news_xlink]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Source */
-  $handler->display->display_options['fields']['field_source']['id'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['table'] = 'field_data_field_source';
-  $handler->display->display_options['fields']['field_source']['field'] = 'field_source';
-  /* Sort criterion: Content: Publication date (field_publication_date) */
-  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
-  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
-  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['id'] = 'field_openberkeley_news_source';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['table'] = 'field_data_field_openberkeley_news_source';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['field'] = 'field_openberkeley_news_source';
+  /* Sort criterion: Content: Publication date (field_openberkeley_news_pdate) */
+  $handler->display->display_options['sorts']['field_openberkeley_news_pdate_value']['id'] = 'field_openberkeley_news_pdate_value';
+  $handler->display->display_options['sorts']['field_openberkeley_news_pdate_value']['table'] = 'field_data_field_openberkeley_news_pdate';
+  $handler->display->display_options['sorts']['field_openberkeley_news_pdate_value']['field'] = 'field_openberkeley_news_pdate_value';
+  $handler->display->display_options['sorts']['field_openberkeley_news_pdate_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -103,15 +103,15 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'news_item' => 'news_item',
+    'openberkeley_news_item' => 'openberkeley_news_item',
   );
-  /* Filter criterion: Content: Publication date (field_publication_date) */
-  $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
-  $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
-  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = '<=';
-  $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'today';
-  $handler->display->display_options['filters']['field_publication_date_value']['year_range'] = '-1:+3';
+  /* Filter criterion: Content: Publication date (field_openberkeley_news_pdate) */
+  $handler->display->display_options['filters']['field_openberkeley_news_pdate_value']['id'] = 'field_openberkeley_news_pdate_value';
+  $handler->display->display_options['filters']['field_openberkeley_news_pdate_value']['table'] = 'field_data_field_openberkeley_news_pdate';
+  $handler->display->display_options['filters']['field_openberkeley_news_pdate_value']['field'] = 'field_openberkeley_news_pdate_value';
+  $handler->display->display_options['filters']['field_openberkeley_news_pdate_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_openberkeley_news_pdate_value']['default_date'] = 'today';
+  $handler->display->display_options['filters']['field_openberkeley_news_pdate_value']['year_range'] = '-1:+3';
 
   /* Display: Recent stories */
   $handler = $view->new_display('panel_pane', 'Recent stories', 'panel_pane_1');
@@ -140,25 +140,25 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: External link */
-  $handler->display->display_options['fields']['field_external_link']['id'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['table'] = 'field_data_field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['field'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['label'] = '';
-  $handler->display->display_options['fields']['field_external_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['empty'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_external_link']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_external_link']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['id'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['table'] = 'field_data_field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['field'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['type'] = 'link_plain';
   /* Field: Content: Publication date */
-  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_date']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['id'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['table'] = 'field_data_field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['field'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['settings'] = array(
     'format_type' => 'panopoly_day',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -171,7 +171,7 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_external_link]';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_openberkeley_news_xlink]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -194,7 +194,7 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_publication_date',
+      'field' => 'field_openberkeley_news_pdate',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -203,8 +203,8 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
-    'field_publication_date' => 'field_publication_date',
-    'field_source' => 'field_source',
+    'field_openberkeley_news_pdate' => 'field_openberkeley_news_pdate',
+    'field_openberkeley_news_source' => 'field_openberkeley_news_source',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -229,34 +229,34 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: External link */
-  $handler->display->display_options['fields']['field_external_link']['id'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['table'] = 'field_data_field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['field'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['label'] = '';
-  $handler->display->display_options['fields']['field_external_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['empty'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_external_link']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_external_link']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_external_link']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['id'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['table'] = 'field_data_field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['field'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['type'] = 'link_plain';
   /* Field: Content: Source */
-  $handler->display->display_options['fields']['field_source']['id'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['table'] = 'field_data_field_source';
-  $handler->display->display_options['fields']['field_source']['field'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['label'] = '';
-  $handler->display->display_options['fields']['field_source']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_source']['alter']['text'] = '[field_source]';
-  $handler->display->display_options['fields']['field_source']['element_type'] = 'em';
-  $handler->display->display_options['fields']['field_source']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['id'] = 'field_openberkeley_news_source';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['table'] = 'field_data_field_openberkeley_news_source';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['field'] = 'field_openberkeley_news_source';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['alter']['text'] = '[field_openberkeley_news_source]';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['element_type'] = 'em';
+  $handler->display->display_options['fields']['field_openberkeley_news_source']['element_label_colon'] = FALSE;
   /* Field: Content: Publication date */
-  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_date']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['id'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['table'] = 'field_data_field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['field'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['settings'] = array(
     'format_type' => 'panopoly_day',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -269,7 +269,7 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_external_link]';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_openberkeley_news_xlink]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'strong';
@@ -286,31 +286,31 @@ function openberkeley_news_views_default_views() {
     'trim_length' => '600',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: News type (field_news_type) */
-  $handler->display->display_options['arguments']['field_news_type_tid']['id'] = 'field_news_type_tid';
-  $handler->display->display_options['arguments']['field_news_type_tid']['table'] = 'field_data_field_news_type';
-  $handler->display->display_options['arguments']['field_news_type_tid']['field'] = 'field_news_type_tid';
-  $handler->display->display_options['arguments']['field_news_type_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_news_type_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_news_type_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_news_type_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['vocabularies'] = array(
-    'news_type' => 'news_type',
+  /* Contextual filter: Content: News type (field_openberkeley_news_type) */
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['id'] = 'field_openberkeley_news_type_tid';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['table'] = 'field_data_field_openberkeley_news_type';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['field'] = 'field_openberkeley_news_type_tid';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate_options']['vocabularies'] = array(
+    'openberkeley_news_type' => 'openberkeley_news_type',
   );
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['argument_input'] = array(
-    'field_news_type_tid' => array(
+    'field_openberkeley_news_type_tid' => array(
       'type' => 'panel',
       'context' => 'entity:file.field_file_image_alt_text',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Content: News type (field_news_type)',
+      'label' => 'Content: News type (field_openberkeley_news_type)',
     ),
   );
 
@@ -320,24 +320,24 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'rss_fields';
   $handler->display->display_options['row_options']['title_field'] = 'title';
-  $handler->display->display_options['row_options']['link_field'] = 'field_external_link';
+  $handler->display->display_options['row_options']['link_field'] = 'field_openberkeley_news_xlink';
   $handler->display->display_options['row_options']['description_field'] = 'body';
-  $handler->display->display_options['row_options']['creator_field'] = 'field_byline';
-  $handler->display->display_options['row_options']['date_field'] = 'field_publication_date';
+  $handler->display->display_options['row_options']['creator_field'] = 'field_openberkeley_news_byline';
+  $handler->display->display_options['row_options']['date_field'] = 'field_openberkeley_news_pdate';
   $handler->display->display_options['row_options']['guid_field_options'] = array(
     'guid_field' => 'uuid',
     'guid_field_is_permalink' => 0,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Publication date */
-  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
-  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
-  $handler->display->display_options['fields']['field_publication_date']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['id'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['table'] = 'field_data_field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['field'] = 'field_openberkeley_news_pdate';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_pdate']['settings'] = array(
     'format_type' => 'panopoly_day',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -349,7 +349,7 @@ function openberkeley_news_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_external_link]';
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_openberkeley_news_xlink]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -377,38 +377,38 @@ function openberkeley_news_views_default_views() {
     'trim_length' => '600',
   );
   /* Field: Content: External link */
-  $handler->display->display_options['fields']['field_external_link']['id'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['table'] = 'field_data_field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['field'] = 'field_external_link';
-  $handler->display->display_options['fields']['field_external_link']['label'] = '';
-  $handler->display->display_options['fields']['field_external_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_external_link']['empty'] = '[path]';
-  $handler->display->display_options['fields']['field_external_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_external_link']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['id'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['table'] = 'field_data_field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['field'] = 'field_openberkeley_news_xlink';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['empty'] = '[path]';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_openberkeley_news_xlink']['type'] = 'link_absolute';
   /* Field: Content: Byline */
-  $handler->display->display_options['fields']['field_byline']['id'] = 'field_byline';
-  $handler->display->display_options['fields']['field_byline']['table'] = 'field_data_field_byline';
-  $handler->display->display_options['fields']['field_byline']['field'] = 'field_byline';
-  $handler->display->display_options['fields']['field_byline']['label'] = '';
-  $handler->display->display_options['fields']['field_byline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_openberkeley_news_byline']['id'] = 'field_openberkeley_news_byline';
+  $handler->display->display_options['fields']['field_openberkeley_news_byline']['table'] = 'field_data_field_openberkeley_news_byline';
+  $handler->display->display_options['fields']['field_openberkeley_news_byline']['field'] = 'field_openberkeley_news_byline';
+  $handler->display->display_options['fields']['field_openberkeley_news_byline']['label'] = '';
+  $handler->display->display_options['fields']['field_openberkeley_news_byline']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: News type (field_news_type) */
-  $handler->display->display_options['arguments']['field_news_type_tid']['id'] = 'field_news_type_tid';
-  $handler->display->display_options['arguments']['field_news_type_tid']['table'] = 'field_data_field_news_type';
-  $handler->display->display_options['arguments']['field_news_type_tid']['field'] = 'field_news_type_tid';
-  $handler->display->display_options['arguments']['field_news_type_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_news_type_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_news_type_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_news_type_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['vocabularies'] = array(
-    'news_type' => 'news_type',
+  /* Contextual filter: Content: News type (field_openberkeley_news_type) */
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['id'] = 'field_openberkeley_news_type_tid';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['table'] = 'field_data_field_openberkeley_news_type';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['field'] = 'field_openberkeley_news_type_tid';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate_options']['vocabularies'] = array(
+    'openberkeley_news_type' => 'openberkeley_news_type',
   );
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_news_type_tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_openberkeley_news_type_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['path'] = 'news-archive/%/feed';
-  $export['news_archive'] = $view;
+  $export['openberkeley_news_archive'] = $view;
 
   return $export;
 }

@@ -10,9 +10,9 @@
 function openberkeley_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news_item-body'
-  $field_instances['node-news_item-body'] = array(
-    'bundle' => 'news_item',
+  // Exported field_instance: 'node-openberkeley_news_item-body'
+  $field_instances['node-openberkeley_news_item-body'] = array(
+    'bundle' => 'openberkeley_news_item',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'External stories do not need a Body, but they should have a Summary for best display on the Archive page.',
@@ -94,9 +94,9 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_byline'
-  $field_instances['node-news_item-field_byline'] = array(
-    'bundle' => 'news_item',
+  // Exported field_instance: 'node-openberkeley_news_item-field_openberkeley_news_byline'
+  $field_instances['node-openberkeley_news_item-field_openberkeley_news_byline'] = array(
+    'bundle' => 'openberkeley_news_item',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Author of the news item.',
@@ -129,7 +129,7 @@ function openberkeley_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_byline',
+    'field_name' => 'field_openberkeley_news_byline',
     'label' => 'Byline',
     'required' => 0,
     'settings' => array(
@@ -151,9 +151,9 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_external_link'
-  $field_instances['node-news_item-field_external_link'] = array(
-    'bundle' => 'news_item',
+  // Exported field_instance: 'node-openberkeley_news_item-field_openberkeley_news_xlink'
+  $field_instances['node-openberkeley_news_item-field_openberkeley_news_xlink'] = array(
+    'bundle' => 'openberkeley_news_item',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Enter the URL of a story hosted on an external site.',
@@ -184,7 +184,7 @@ function openberkeley_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_external_link',
+    'field_name' => 'field_openberkeley_news_xlink',
     'label' => 'External link',
     'required' => 0,
     'settings' => array(
@@ -219,9 +219,9 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_news_type'
-  $field_instances['node-news_item-field_news_type'] = array(
-    'bundle' => 'news_item',
+  // Exported field_instance: 'node-openberkeley_news_item-field_openberkeley_news_type'
+  $field_instances['node-openberkeley_news_item-field_openberkeley_news_type'] = array(
+    'bundle' => 'openberkeley_news_item',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -253,7 +253,7 @@ function openberkeley_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_news_type',
+    'field_name' => 'field_openberkeley_news_type',
     'label' => 'News type',
     'required' => 0,
     'settings' => array(
@@ -268,9 +268,9 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_publication_date'
-  $field_instances['node-news_item-field_publication_date'] = array(
-    'bundle' => 'news_item',
+  // Exported field_instance: 'node-openberkeley_news_item-field_openberkeley_news_pdate'
+  $field_instances['node-openberkeley_news_item-field_openberkeley_news_pdate'] = array(
+    'bundle' => 'openberkeley_news_item',
     'deleted' => 0,
     'description' => 'Date the story was published.',
     'display' => array(
@@ -314,7 +314,7 @@ function openberkeley_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_publication_date',
+    'field_name' => 'field_openberkeley_news_pdate',
     'label' => 'Publication date',
     'required' => 1,
     'settings' => array(
@@ -340,9 +340,9 @@ function openberkeley_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_source'
-  $field_instances['node-news_item-field_source'] = array(
-    'bundle' => 'news_item',
+  // Exported field_instance: 'node-openberkeley_news_item-field_openberkeley_news_source'
+  $field_instances['node-openberkeley_news_item-field_openberkeley_news_source'] = array(
+    'bundle' => 'openberkeley_news_item',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The source of the news story, if not produced specifically for this site. Examples: UC Berkeley NewsCenter, San Francisco Chronicle, NBC Bay Area.',
@@ -375,7 +375,7 @@ function openberkeley_news_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_source',
+    'field_name' => 'field_openberkeley_news_source',
     'label' => 'Source',
     'required' => 0,
     'settings' => array(
