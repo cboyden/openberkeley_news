@@ -5,12 +5,6 @@
  */
 
 /**
- * Enable default blocks in our default theme.
- *
- * @see openberkeley_starter.install
- */
-
-/**
  * Implements hook_enable().
  */
 function openberkeley_news_starter_enable() {
@@ -38,3 +32,9 @@ function openberkeley_news_starter_disable() {
     'OpenBerkeleyNewsStarterNodePages',
   ));
 }
+
+/**
+ * Enable default blocks in our default theme.
+ *
+ * @see openberkeley_starter.install
+ */
