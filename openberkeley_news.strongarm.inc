@@ -13,56 +13,56 @@ function openberkeley_news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_news_item';
+  $strongarm->name = 'additional_settings__active_tab_openberkeley_news_item';
   $strongarm->value = 'edit-submission';
-  $export['additional_settings__active_tab_news_item'] = $strongarm;
+  $export['additional_settings__active_tab_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_popup_authored_enabled_news_item';
+  $strongarm->name = 'date_popup_authored_enabled_openberkeley_news_item';
   $strongarm->value = 1;
-  $export['date_popup_authored_enabled_news_item'] = $strongarm;
+  $export['date_popup_authored_enabled_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_popup_authored_format_news_item';
+  $strongarm->name = 'date_popup_authored_format_openberkeley_news_item';
   $strongarm->value = 'm/d/Y - H:i';
-  $export['date_popup_authored_format_news_item'] = $strongarm;
+  $export['date_popup_authored_format_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_popup_authored_year_range_news_item';
+  $strongarm->name = 'date_popup_authored_year_range_openberkeley_news_item';
   $strongarm->value = '3';
-  $export['date_popup_authored_year_range_news_item'] = $strongarm;
+  $export['date_popup_authored_year_range_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'diff_enable_revisions_page_node_news_item';
+  $strongarm->name = 'diff_enable_revisions_page_node_openberkeley_news_item';
   $strongarm->value = 1;
-  $export['diff_enable_revisions_page_node_news_item'] = $strongarm;
+  $export['diff_enable_revisions_page_node_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'diff_show_preview_changes_node_news_item';
+  $strongarm->name = 'diff_show_preview_changes_node_openberkeley_news_item';
   $strongarm->value = 1;
-  $export['diff_show_preview_changes_node_news_item'] = $strongarm;
+  $export['diff_show_preview_changes_node_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'diff_view_mode_preview_node_news_item';
+  $strongarm->name = 'diff_view_mode_preview_node_openberkeley_news_item';
   $strongarm->value = 'full';
-  $export['diff_view_mode_preview_node_news_item'] = $strongarm;
+  $export['diff_view_mode_preview_node_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__news_item';
+  $strongarm->name = 'field_bundle_settings_node__openberkeley_news_item';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -105,56 +105,56 @@ function openberkeley_news_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__news_item'] = $strongarm;
+  $export['field_bundle_settings_node__openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_news_item';
+  $strongarm->name = 'menu_options_openberkeley_news_item';
   $strongarm->value = array();
-  $export['menu_options_news_item'] = $strongarm;
+  $export['menu_options_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_news_item';
+  $strongarm->name = 'menu_parent_openberkeley_news_item';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_news_item'] = $strongarm;
+  $export['menu_parent_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_changed_news_item';
+  $strongarm->name = 'node_export_reset_changed_openberkeley_news_item';
   $strongarm->value = 1;
-  $export['node_export_reset_changed_news_item'] = $strongarm;
+  $export['node_export_reset_changed_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_news_item';
+  $strongarm->name = 'node_options_openberkeley_news_item';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_news_item'] = $strongarm;
+  $export['node_options_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_news_item';
+  $strongarm->name = 'node_preview_openberkeley_news_item';
   $strongarm->value = '0';
-  $export['node_preview_news_item'] = $strongarm;
+  $export['node_preview_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_news_item';
+  $strongarm->name = 'node_submitted_openberkeley_news_item';
   $strongarm->value = 0;
-  $export['node_submitted_news_item'] = $strongarm;
+  $export['node_submitted_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'panelizer_defaults_node_news_item';
+  $strongarm->name = 'panelizer_defaults_node_openberkeley_news_item';
   $strongarm->value = array(
     'status' => 1,
     'view modes' => array(
@@ -185,12 +185,12 @@ function openberkeley_news_strongarm() {
       ),
     ),
   );
-  $export['panelizer_defaults_node_news_item'] = $strongarm;
+  $export['panelizer_defaults_node_openberkeley_news_item'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'panelizer_defaults_taxonomy_term_news_type';
+  $strongarm->name = 'panelizer_defaults_taxonomy_term_openberkeley_news_type';
   $strongarm->value = array(
     'status' => 0,
     'view modes' => array(
@@ -226,21 +226,21 @@ function openberkeley_news_strongarm() {
       ),
     ),
   );
-  $export['panelizer_defaults_taxonomy_term_news_type'] = $strongarm;
+  $export['panelizer_defaults_taxonomy_term_openberkeley_news_type'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_news_item_pattern';
+  $strongarm->name = 'pathauto_node_openberkeley_news_item_pattern';
   $strongarm->value = 'news/[node:title]';
-  $export['pathauto_node_news_item_pattern'] = $strongarm;
+  $export['pathauto_node_openberkeley_news_item_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'save_continue_news_item';
+  $strongarm->name = 'save_continue_openberkeley_news_item';
   $strongarm->value = 'Save and add fields';
-  $export['save_continue_news_item'] = $strongarm;
+  $export['save_continue_openberkeley_news_item'] = $strongarm;
 
   return $export;
 }
