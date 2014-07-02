@@ -6,32 +6,9 @@
 
 /**
  * Enable default blocks in our default theme.
+ *
+ * @see openberkeley_starter.install
  */
-function openberkeley_news_starter_install_blocks() {
-/*
-  $blocks = array(
-    array(
-      'theme' => 'berkeley',
-      'region' => 'footer',
-      'module' => 'menu',
-      'delta' => 'menu-footer-menu',
-    ),
-  );
-  
-  foreach ($blocks as $block) {
-    db_merge('block')
-      ->key(array('theme' => $block['theme'], 'delta' => $block['delta'], 'module' => $block['module']))
-      ->fields(array(
-        'title' => isset($block['title']) ? $block['title'] : '',
-        'region' => ($block['region'] == BLOCK_REGION_NONE ? '' : $block['region']),
-        'pages' => '',
-        'status' => (int) ($block['region'] != BLOCK_REGION_NONE),
-        'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-      ))
-      ->execute();
-  }
-*/
-}
 
 /**
  * Implements hook_enable().
@@ -43,11 +20,7 @@ function openberkeley_news_starter_enable() {
      */
     'OpenBerkeleyNewsStarterNodePages',
     'OpenBerkeleyNewsStarterMenu',
-    //'OpenBerkeleyNewsStarterBlocks',
   ));
-
-  // Enable default blocks in our default theme.
-  //openberkeley_news_starter_install_blocks();
 }
 
 /**
@@ -63,6 +36,5 @@ function openberkeley_news_starter_disable() {
      */
     'OpenBerkeleyNewsStarterMenu',
     'OpenBerkeleyNewsStarterNodePages',
-    //'OpenBerkeleyNewsStarterBlocks',
   ));
 }
