@@ -1,7 +1,7 @@
 Open Berkeley News - CHANGELOG
 ==============================
 
-openberkeley_news-7.x-0.1
+openberkeley_news-7.x-0.1-beta1
 ------------------------------
 * OPENUCB-330: Dependencies
 ** Removed dependency on panopoly_pages. Added dependency on panopoly_core. Removed redundant dependencies.
