@@ -34,7 +34,7 @@ function openberkeley_news_node_info() {
     'openberkeley_news_item' => array(
       'name' => t('News Item'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t("Time-sensitive content. They have a publication date and may also have a byline or an external source. Types of news items can include press releases, announcements, or external articles."),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
